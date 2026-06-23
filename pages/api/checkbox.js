@@ -1,8 +1,11 @@
 import { client } from '../../lib/sanity';
 
 const allowedOrigins = [
-  "https://shelyakova.github.io", // Для тестування
-  "https://theatre-garden.kyiv.ua/"
+  "https://theatre-garden.kyiv.ua/",
+  // Для тестування
+  "https://shelyakova.github.io",
+  // "http://localhost:3001",
+  // "http://localhost:3000",
 ];
 
 export default async function handler(req, res) {
