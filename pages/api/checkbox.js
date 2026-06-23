@@ -1,7 +1,7 @@
 import { client } from '../../lib/sanity';
 
 const allowedOrigins = [
-  "https://shelyakova.github.io",
+  "https://shelyakova.github.io", // Для тестування
   "https://theatre-garden.kyiv.ua/"
 ];
 
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const data = await client.fetch(`*[_type == "post" && published == true]`);
+    const data = await client.fetch(`*[_type == "checkbox"]{ _id, name }`);
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ error: `Failed to fetch data, error: ${error.message}` });
